@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Schedule Planner</title>
+    <link rel="stylesheet" type="text/css" href="schedule.css">
+</head>
+<body>
+    <div class="box" id="convertBannerData" contenteditable="true">CONVERT</div>
+    <script>
+        document.getElementById('convertBannerData').addEventListener('mouseover', function() {
+            this.textContent = '';
+        });
+        // document.getElementById('convertBannerData').addEventListener('mouseout', function() {
+        //     this.textContent = 'CONVERT';
+        // });
+        addEventListener('mousedown', function () {
+            let div = document.getElementById('convertBannerData')
+            if (!convertBannerData.contains(event.target)) {
+                div.textContent = "CONVERT";
+            }
+        });
+        // addEventListener('paste', function () {
+        //     let div = document.getElementById('convertBannerData')
+        //     div.textContent = "CONVERT";
+        // });
+    </script>
+
+    <table id="editableTable">
+        <tr id="headers">
+            <th id="termtd"></th>
+            <th id="crn">CRN</th>
+            <th id="course">Course</th>
+            <th id="title">Title</th>
+            <th id="prof">Prof</th>
+            <th id="days">Days</th>
+            <th id="time">Time</th>
+            <th id="location">Location</th>
+        </tr>
+        <tr id="rowOne">
+            <td id="termTd" rowspan="5" style="background-color: white;"><div id="term" contenteditable="true"></div></td>
+            <td id="crnTd"><div contenteditable="true" value="test"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="title" contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="days" contenteditable="true"></div></td>
+            <td><div id="time" contenteditable="true"></div></td>
+            <td><div id="location" contenteditable="true"></div></td>
+        </tr>
+        <tr id="rowTwo">
+            <td id="crnTd"><div contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="title" contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="days" contenteditable="true"></div></td>
+            <td><div id="time" contenteditable="true"></div></td>
+            <td><div id="location" contenteditable="true"></div></td>
+        </tr>
+        <tr id="rowThree">
+            <td id="crnTd"><div contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="title" contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="days" contenteditable="true"></div></td>
+            <td><div id="time" contenteditable="true"></div></td>
+            <td><div id="location" contenteditable="true"></div></td>
+        </tr>
+        <tr id="rowFour">
+            <td id="crnTd"><div contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="title" contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="days" contenteditable="true"></div></td>
+            <td><div id="time" contenteditable="true"></div></td>
+            <td><div id="location" contenteditable="true"></div></td>
+        </tr>
+        <tr id="rowFive">
+            <td id="crnTd"><div contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="title" contenteditable="true"></div></td>
+            <td><div contenteditable="true"></div></td>
+            <td><div id="days" contenteditable="true"></div></td>
+            <td><div id="time" contenteditable="true"></div></td>
+            <td><div id="location" contenteditable="true"></div></td>
+        </tr>
+
+        <!-- Add more rows as needed -->
+    </table>
+
+    <table id="WeekDays" class="center">
+        <!-- style="display: inline-block;" -->
+        <tr id="headers">
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr id="8">
+            <td><div>8:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="9">
+            <td><div>9:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="10">
+            <td><div>10:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="11">
+            <td><div>11:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="12">
+            <td><div>12:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="1">
+            <td><div>1:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="2">
+            <td><div>2:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="3">
+            <td><div>3:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr id="4">
+            <td><div>4:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+    </table>
+    <!-- <table id="TueThur" style="display: inline-block;">
+        <tr id="headers">
+            <th></th>
+            <th>Tuesday</th>
+            <th>Thursday</th>
+        </tr>
+        <tr>
+            <td><div>9:30</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>10:45</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>11:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>12:15</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>12:30</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>1:45</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>2:00</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div>3:15</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+    </table> -->
+
+    <script src="schedule.js"></script>
+    
+</body>
+</html>

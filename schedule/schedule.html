@@ -12,19 +12,12 @@
         document.getElementById('convertBannerData').addEventListener('mouseover', function() {
             this.textContent = '';
         });
-        // document.getElementById('convertBannerData').addEventListener('mouseout', function() {
-        //     this.textContent = 'CONVERT';
-        // });
         addEventListener('mousedown', function () {
             let div = document.getElementById('convertBannerData')
             if (!convertBannerData.contains(event.target)) {
                 div.textContent = "CONVERT";
             }
         });
-        // addEventListener('paste', function () {
-        //     let div = document.getElementById('convertBannerData')
-        //     div.textContent = "CONVERT";
-        // });
     </script>
 
     <table id="editableTable">
@@ -84,12 +77,9 @@
             <td><div id="time" contenteditable="true"></div></td>
             <td><div id="location" contenteditable="true"></div></td>
         </tr>
-
-        <!-- Add more rows as needed -->
     </table>
-
+    
     <table id="WeekDays" class="center">
-        <!-- style="display: inline-block;" -->
         <tr id="headers">
             <th></th>
             <th>Monday</th>
@@ -171,53 +161,6 @@
             <td><div></div></td>
         </tr>
     </table>
-    <!-- <table id="TueThur" style="display: inline-block;">
-        <tr id="headers">
-            <th></th>
-            <th>Tuesday</th>
-            <th>Thursday</th>
-        </tr>
-        <tr>
-            <td><div>9:30</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>10:45</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>11:00</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>12:15</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>12:30</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>1:45</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>2:00</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-        <tr>
-            <td><div>3:15</div></td>
-            <td><div></div></td>
-            <td><div></div></td>
-        </tr>
-    </table> -->
 
     <script src="schedule.js"></script>
     

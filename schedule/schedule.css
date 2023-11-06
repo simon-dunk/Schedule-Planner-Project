@@ -12,7 +12,7 @@ th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    min-width: 100px; /* Set your desired minimum width here */
+    min-width: 100px;
     text-align: center;
     font-size: 18px;
 }
@@ -51,12 +51,12 @@ th, td {
     margin-left: 50px;
     height: 40px;
     width: 10%;
-    text-align: center; /* Horizontally center the text */
-    display: flex; /* Use flexbox to center vertically and horizontally */
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
+    text-align: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     line-height: 40px;
-    vertical-align: middle; /* Vertically center the content */
+    vertical-align: middle;
     transition: transform 0.3s, width 0.3s, box-shadow 0.3s;
 }
 
@@ -117,14 +117,13 @@ th, td {
     }
   }
 
-/* Adjust the positioning of the classBubble within the table cell */
+/* Adjusts the positioning of the classBubble within the table cell */
 #WeekDays td {
     position: relative;
     padding: 0;
     border: 1px solid #ddd;
-    /* text-align: center; */
     height: 60px;
-    overflow: visible; /* Allow content to visually overflow the cell */
+    overflow: visible; 
 }
 
 

@@ -1,18 +1,21 @@
 /* ############# STYLES ############# */
 body {
     font-family: "Gill Sans", sans-serif;
+    background: #818589;
 }
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    min-width: 100px;
+    min-width: 100px; /* Set your desired minimum width here */
     text-align: center;
     font-size: 18px;
 }
@@ -21,12 +24,14 @@ th, td {
 /* ############# ID STYLES ############# */
 
 #crnTd {
-    color: #4CAF50;
+    color: rgba(0, 93, 255, 0.8);;
 }
 
 #headers {
-    background-image: linear-gradient(green, rgb(1, 200, 1));
+    /* background-image: linear-gradient(green, rgb(1, 200, 1)); */
     color: white;
+    /* background: rgb(0,93,255); */
+    background: linear-gradient(180deg, rgba(0,93,255,1) 0%, rgba(0,170,255,1) 35%);
 }
 
 #termtd {
@@ -39,29 +44,48 @@ th, td {
     width: fit-content;
     height: fit-content;
     font-size: 24px;
-    border: 1px solid #4CAF50; 
     outline: none; 
+}
+
+#term:hover {
+    border: 1px solid rgb(0,93,255);
 }
 
 #convertBannerData {
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 50px;
     height: 40px;
     width: 10%;
-    text-align: center; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    text-align: center; /* Horizontally center the text */
+    display: flex; /* Use flexbox to center vertically and horizontally */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
     line-height: 40px;
-    vertical-align: middle;
+    vertical-align: middle; /* Vertically center the content */
     transition: transform 0.3s, width 0.3s, box-shadow 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background: linear-gradient(180deg, rgba(0,93,255,1) 0%, rgba(0,170,255,1) 35%);
+    color: white;
+
+    box-shadow: 
+  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset, 
+  rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+  rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 
 /* ############# TABLE ID STYLES ############# */
+
+#editableTable {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
 
 #editableTable, th, td {
     border: 1px solid gray;
@@ -73,28 +97,41 @@ th, td {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+/* Adjust the positioning of the classBubble within the table cell */
+#WeekDays td {
+    position: relative;
+    padding: 0;
+    border: 1px solid #ddd;
+    height: 60px;
+    overflow: visible; /* Allow content to visually overflow the cell */
 }
 
 
 /* ############# CLASS STYLES ############# */
 
 .classBubble {
-    color: #4CAF50;
+    /* color: rgb(0,93,255); */
     border-radius: 10px;
     max-height: 75px;
     font-size: 14px;
     color: white;
     position: absolute;
     width: 100%;
-    background-color: rgba(76, 175, 80, 0.8);
+    background-color: rgba(0, 93, 255, 0.8);
     /* overflow: hidden; */
     overflow: auto;
     top: 0;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 
 .box:hover, .box:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var("black");
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   transform: translateY(-0.25em);
   color: var(--color);
   transition: 0.25s;
@@ -116,15 +153,3 @@ th, td {
       color: #fff;
     }
   }
-
-/* Adjusts the positioning of the classBubble within the table cell */
-#WeekDays td {
-    position: relative;
-    padding: 0;
-    border: 1px solid #ddd;
-    height: 60px;
-    overflow: visible; 
-}
-
-
-

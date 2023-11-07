@@ -46,17 +46,30 @@ const dataObj = {
     }
 };
 
-let globalIndex = 0;
+const table = document.getElementById("editableTable");
+const weekTable = document.getElementById("WeekDays");
 
-function styleTables(table) {
+function styleTables() {
+    // Assuming you want the cell index of the second row (index 1) and third cell (index 2)
     const numberOfCells = table.rows[0].cells.length;
-    const numberOfRows = table.rows.length;
+    const numberOfRowsInTable = table.rows.length;
+    const numberOfRowsInWeekTable = weekTable.rows.length;
+    console.log(`The number of rows is ${numberOfRowsInTable}`);
+    console.log(`The number of cells is ${numberOfCells}`);
 
-    for (let i = 0; i < numberOfRows; i++) {
+
+    for (let i = 0; i < numberOfRowsInTable; i++) {
         console.log(i);
         if (((i + 1) % 2) > 0) {
+            // console.log("parsed table index: " + i)
             table.rows[i].style.backgroundColor = "rgb(230, 230, 230)";
+        } else {
+            table.rows[i].style.backgroundColor = "white";
         }
+    }
+
+    for (let i = 0; i < numberOfRowsInWeekTable; i++) {
+        weekTable.rows[i].style.backgroundColor = "white";
     }
 }
 
@@ -121,6 +134,8 @@ function isValidTimeFormat(input) {
     // sets patters for time of day format hh:mm and ranges of times
     const timePattern = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
     const timeRangePattern = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]\s*-\s*([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
+
+    // const trimmedInput = input.trim();
     const trimmedInput = input.replace(/[^0-9:-]/g, '');
 
     if (timeRangePattern.test(trimmedInput)) {
@@ -255,6 +270,7 @@ function formatTimeRange(inputString) {
         return `${formattedHours}:${minutes}`;
     }
 
+    // Format both time parts and join them with " - "
     const formattedTimeRange = timeParts.map(formatTimePart).join(' - ');
 
     return formattedTimeRange;
@@ -262,9 +278,10 @@ function formatTimeRange(inputString) {
 
 // EVENT LISTENER(s)
 
-const table = document.getElementById("editableTable");
+
 table.addEventListener('input', function (event) {
     const target = event.target;
+    // const selection = window.getSelection();
     const output = target.textContent;
     const outputID = target.id;
     const targetParentNode = target.parentNode;
@@ -273,14 +290,13 @@ table.addEventListener('input', function (event) {
 
     console.log(`Row '${targetGrandparentNodeId}' selected `);
     console.log(`Cell contains '${target.textContent}'`);
-
+    // console.log("ID: " + outputID);
 
     if (outputID) {
         parseData(output, outputID, targetGrandparentNodeId);
     }
 });
-
-
+let globalIndex = 0;
 table.addEventListener('paste', (event) => {
     const target = event.target;
 
@@ -335,6 +351,13 @@ table.addEventListener('paste', (event) => {
 });
 
 const convert = document.getElementById("convertBannerData");
+let mouseOver;
+convert.addEventListener('mouseover', function (event) {
+    let mouseOver = true;
+});
+convert.addEventListener('mouseout', function (event) {
+    let mouseOver = true;
+});
 convert.addEventListener('paste', function (event) {
     const target = event.target;
     event.preventDefault();
@@ -378,7 +401,6 @@ convert.addEventListener('paste', function (event) {
     }
 
 
-    // Adds the specific data to each individual cell (Easier than iteration)
     const cells = table.querySelectorAll('div');
     ++globalIndex
     cells[globalIndex].innerHTML = crn;

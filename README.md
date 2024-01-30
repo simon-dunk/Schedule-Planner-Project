@@ -2,7 +2,7 @@
 
 
 ## Description
-This project recieves user-inputed data about an academic course and generates a dynamic visualization of the ueser's weekly class schedule on a calendar table. HTML / CSS / JavaScript
+This project receives user-inputed data about an academic course and generates a dynamic visualization of the user's weekly class schedule on a calendar table. HTML / CSS / JavaScript
 
 ## Instructions
 * Open the <mark>schedule.html<mark> file to launch the application.

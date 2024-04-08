@@ -114,7 +114,7 @@ th, td {
 .classBubble {
     /* color: rgb(0,93,255); */
     border-radius: 10px;
-    max-height: 75px;
+    /* max-height: 75px; */
     font-size: 14px;
     color: white;
     position: absolute;

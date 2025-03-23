@@ -43,6 +43,15 @@ const dataObj = {
             end : null
         },
         location: null,
+    },
+    rowSix: {
+        title: null,
+        day: [],
+        time : {
+            start : null,
+            end : null
+        },
+        location: null,
     }
 };
 
@@ -178,6 +187,7 @@ function visualizeDataOnScheduleTables(selectedRow) {
 
         // sets access for all elements of the correct table row
         const tableRowOfHour = document.getElementById(tableDivLocation);
+        console.log(tableRowOfHour)
         for (let idx of dataObj[selectedRow].day) {
             let currDiv = tableRowOfHour.getElementsByTagName("div")[idx + 1];
 
@@ -351,105 +361,6 @@ table.addEventListener('paste', (event) => {
     }
 });
 
-// const convert = document.getElementById("convertBannerData");
-// let mouseOver;
-// convert.addEventListener('mouseover', function (event) {
-//     let mouseOver = true;
-// });
-// convert.addEventListener('mouseout', function (event) {
-//     let mouseOver = true;
-// });
-// convert.addEventListener('paste', function (event) {
-//     const target = event.target;
-//     event.preventDefault();
-//     const pastedText = (event.clipboardData || window.clipboardData).getData('text');
-//     const modifiedString = pastedText.replace(/\n/g, '\t');
-//     const values = modifiedString.split('\t');
-//     const wantedIndexOfPastedData = [1, 2, 7, 8, 9, 19, 21];
-
-//     const crn = values[1];
-//     const course = `${values[2]}-${values[3]}`;
-//     let title = values[7];
-//     if (title.length > 11) {
-//         let words = title.split(" ");
-//         title = "";
-//         for (let word of words) {
-//             title += word[0];
-//             title += word[1];
-//             title += word[2];
-//         }
-//     }
-
-//     const time = formatTimeRange(values[9]);
-//     const prof = values[19].split(" ")[2];
-//     const location = values[21];
-//     let days = "";
-
-//     if (values[8].includes("M")) {
-//         days += "Mon";
-//     } 
-//     if (values[8].includes("T")) {
-//         days += "Tue";
-//     } 
-//     if (values[8].includes("W")) {
-//         days += ", Wed";
-//     } 
-//     if (values[8].includes("R")) {
-//         days += ", Thur";
-//     } 
-//     if (values[8].includes("F")) {
-//         days += ", Fri";
-//     }
-
-
-//     const cells = table.querySelectorAll('div');
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = crn;
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = course;
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = title;
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = prof;
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = days;
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = time;
-//     ++globalIndex
-//     cells[globalIndex].innerHTML = location;
-
-//     // calls the parseData function for each individual cell when pasted in
-//     for (let i = 0; i < globalIndex; i++) {
-//         let cell = cells[i + 1];
-
-//         let output = cell.textContent;
-//         let outputID = cell.id;
-//         let targetParentNode = cell.parentNode;
-//         let targetGrandparentNode = targetParentNode.parentNode;
-//         let targetGrandparentNodeId = targetGrandparentNode.getAttribute('id');
-
-//         console.log(`Row '${targetGrandparentNodeId}' selected `);
-//         console.log(`Cell contains '${cell.textContent}'`);
-
-//         if (outputID) {
-//             parseData(output, outputID, targetGrandparentNodeId);
-//         }
-//     }
-
-//     const output = target.textContent;
-//     const outputID = target.id;
-//     const targetParentNode = target.parentNode;
-//     const targetGrandparentNode = targetParentNode.parentNode;
-//     const targetGrandparentNodeId = targetGrandparentNode.getAttribute('id');
-
-//     console.log(`Row '${targetGrandparentNodeId}' selected `);
-//     console.log(`Cell contains '${target.textContent}'`);
-
-//     if (outputID) {
-//         parseData(output, outputID, targetGrandparentNodeId);
-//     }
-
-// });
 
 
 styleTables(table);
